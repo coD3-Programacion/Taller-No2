@@ -20,11 +20,42 @@
 ### 2. Desarrollar un programa que ingrese un número flotante n y separe su parte entera de la parte decimal, y luego entregue los dígitos tanto de la parte entera como de la decimal.
 
 ```python
+""" 
+2. Desarrollar un programa que ingrese un número flotante n y separe su parte entera de la parte decimal, y luego entregue 
+los dígitos tanto de la parte entera como de la decimal.
+"""
+
+def separar_partes_digitos(n):
+    #Se halla la parte entera con int(n) y la parte decimal restando la parte entera al numero
+    parte_entera = int(n) 
+    parte_decimal = n - parte_entera
+
+    #Se imprime el numero con sus partes divididas
+    print("El numero es:", n)
+    print("La parte entera es:", parte_entera , "y la parte decimal es:", parte_decimal)
+
+    #Se convierte el numero a str para poder recorrerlo con un for y encontrar sus digitos
+    n_str = str(n)
+    digitos = []
+    for i in n_str: #se recorre el numero y se pone en la lista
+        digitos.append(i)
+
+    #se halla el indice del punto en la lista para hacer slicing de los digitos de la parte decimal y los de la parte entera
+    punto = digitos.index(".")
+    parte_decimal = digitos[punto+1:] 
+    parte_entera = digitos[:punto]
+    print("Los digitos de la parte entera son:", parte_entera)
+    print("Los digitos de la parte decimal son: ", parte_decimal)
+
+if __name__ == "__main__":
+    numero = float(input("Ingrese un numero para separar la parte entera de la decimal: ")) #se pide el numero
+    separar_partes_digitos(numero)
 ```
 
 #### Explicación de la solución
 
-*-Explicacion-*
+**Lo primero que se hace en la funcion es encontrar la parte entera con int() y la parte decimal, luego se convierte el numero a str para convertir todos los digitos del numero en elementos de una lista incluyendo el punto ("."), y luego se divide o
+se hace slicing para separar los elementos antes del punto (la parte entera) y los elementos despues del punto que son la parte decimal*
 
 ### 3. Desarrollar un programa que permita ingresar dos números enteros y determinar si se tratan de números espejos, definiendo números espejos como dos números a y b tales que a se lee de izquierda a derecha igual que se lee b de derecha a izquierda, y viceversa.
 
