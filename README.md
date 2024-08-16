@@ -134,11 +134,33 @@ datos de valor aproximado y el real, para que con un ciclo while e incrementando
 ### 6. Desarrollar un programa que determine si en una lista existen o no elementos repetidos. Pista: Maneje valores booleanos y utilice el operador in.
 
 ```python
+"""
+6. Desarrollar un programa que determine si en una lista existen o no elementos repetidos. 
+Pista: Maneje valores booleanos y utilice el operador in.
+"""
+
+def elementos_repetidos(lista_d):
+    elementos_nr = [] #lista con elementos que no esta repetidos (por el momento)
+    for i in lista_d:
+        if i in elementos_nr: #si el elemento esta en la lista de elementos no repetidos por el momento, entonces deja de ser no repetido 
+            print("El elemento repetido es ", i)
+        else: #si no ocurre esto, entonces el elemento se agrega a la lista de elementos no repetidos por el momento
+            elementos_nr.append(i)
+
+if __name__ == "__main__":
+    numero_elementos = int(input("Ingrese la cantidad de elementos que tiene la lista")) #Aca la cantidad de elementos de la lista
+    lista = []
+    for i in range(1, numero_elementos+1): #se piden los elementos de la lista y se va llenando
+        elementos = input("Ingrese el elemento de la lista: ") 
+        lista.append(elementos)
+    print(lista)
+    elementos_repetidos(lista)
 ```
 
 #### Explicación de la solución
 
-*-Explicacion-*
+*Basicamente lo que se hace es pedir la lista (sabiendo el numero de elementos y llenandola con un bucle for) y despues se crea una lista con elementos no repetidos hasta el momento y recorriendo la lista, si el elemento no esta en la lista de no repetidos
+se agrega, si si esta en la lista entonces el numero deja de ser no repetido y se convierte en repetido*
 
 ### 7. Desarrollar un programa que determine si en una lista se encuentra una cadena de caracteres con dos o más vocales. Si la cadena existe debe imprimirla y si no existe debe imprimir 'No existe'.
 
