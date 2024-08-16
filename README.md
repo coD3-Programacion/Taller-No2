@@ -70,11 +70,57 @@ se hace slicing para separar los elementos antes del punto (la parte entera) y l
 $$cos(x) \approx cos(x,n) \approx \sum_{i=0}^{n} (-1)^i \frac{x^{2i}}{(2i)!}$$
 
 ```python
+"""
+4. Diseñar una función que permita calcular una aproximación de la función coseno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos 
+de la serie de Taylor. nota: use math para traer la función coseno y mostrar la diferencia entre el valor real y la aproximación. Calcule con cuántos términos de 
+la serie (i.e: cuáles valores de n), se tienen errores del 10%, 1%, 0.1% y 0.001%.
+"""
+import math
+
+def calculo_aprox(x, n):
+    suma_total = 0
+    
+    for i in range(0, n): #el for es la suma de la serie de taylor
+        serie_taylor = ((-1)**i)*((x)**(2*i)/(math.factorial(2*i))) #la operacion
+        suma_total += serie_taylor
+        i += 1
+
+    return suma_total
+
+if __name__ == "__main__":
+    x = float(input("Escriba cualquier valor real x para la aproximacion de coseno con la serie de Taylor alrededor de 0")) #se pide el numero
+    valor_real = math.cos(x) 
+    n = 1 #n es la cantidad de terminos de la serie, por el momento es 1
+    valor_aproximado = calculo_aprox(x, n)
+    error = math.fabs(((math.fabs(valor_aproximado - valor_real))/valor_real)*100) #el porcentaje (%) de error
+    print(f"Con {n} terminos el valor aprox es {valor_aproximado} el valor real es {valor_real} y el % de error es {error}%")
+    
+    while error>10: #mientras que el error sea mayor a 10 se va a incrementar el numero de terminos hasta que sea menor
+        n += 1
+        valor_aproximado = calculo_aprox(x, n)
+        error = math.fabs(((math.fabs(valor_aproximado - valor_real))/valor_real)*100)
+        print(f"Con {n} terminos el valor aprox es {valor_aproximado} el valor real es {valor_real} y el % de error es {error}%")
+        if 1<error<10:
+            print(f"Con {n} terminos se tiene un error menor al 10%")
+    
+    while error<10: #si el error es menor al 10% se busca el termino en el que el error sea menor al 1%, 0.1% y 0.001% 
+        n += 1
+        valor_aproximado = calculo_aprox(x, n)
+        error = math.fabs(((math.fabs(valor_aproximado - valor_real))/valor_real)*100)
+        print(f"Con {n} terminos el valor aprox es {valor_aproximado} el valor real es {valor_real} y el % de error es {error}%")
+        if 0.1<error<1:
+            print(f"Con {n} terminos se tiene un error menor al 1%")
+        elif 0.001<error<0.1:
+            print(f"Con {n} terminos se tiene un error menor al 0.1%")
+        elif error<0.001:
+            print(f"Con {n} terminos se tiene un error menor al 0.001%")
+            break
 ```
 
 #### Explicación de la solución
 
-*-Explicacion-*
+*Primero se pide el numero que se quiere aproximar, se saca el valor real y con la funcion el valor aproximado, esto con un for que representaria la suma de la serie de Taylor. Ahora lo que se hace es hallar el porcentaje de error teniendo en cuenta los
+datos de valor aproximado y el real, para que con un ciclo while e incrementando la cantidad de terminos se terminen hallando el porcentaje de error del 10%, 1%, 0.1% y 0.001%*
 
 ### 5. Desarrollar un programa que permita determinar el Minimo Comun Multiplo de dos numeros enteros. Abordar el problema desde una perpectiva tanto iterativa como recursiva. Pista: Puede ser de utilidad chequear el Algoritmo de Euclides para el cálculo del Máximo Común Divisor, y revisar cómo se relaciona este último con el Mínimo Común Múltiplo.
 
