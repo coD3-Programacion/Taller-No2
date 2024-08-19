@@ -189,11 +189,39 @@ salida: [1, True]
 </center>
 
 ```python
+#8. Desarrollar un programa que dadas dos listas determine que elementos tiene la primer lista que no tenga la segunda lista.
+
+def funcion_listas_dif(lista1, lista2):
+    for i in lista1:
+        if i not in lista2:
+            lista_diferente.append(i)
+    print("La lista 1 es:", lista1)
+    print("La lista 2 es:", lista2)
+    print("La lista 3 con elementos de la 1era que no tiene la 2da es:", lista_diferente)
+
+
+if __name__ == "__main__":
+    n_lista1 = int(input("Escriba la cantidad de elementos que tiene la lista 1: "))
+    lista1 = []
+    for i in range(1, n_lista1+1):
+        elementos_lista1 = input("Escriba cada uno de los elementos de la lista 1: ")
+        lista1.append(elementos_lista1)
+
+    n_lista2 = int(input("Escriba la cantidad de elementos que tiene la lista 2: "))
+    lista2 = []
+    for i in range(1, n_lista2+1):
+        elementos_lista2 = input("Escriba cada uno de los elementos de la lista 2: ")
+        lista2.append(elementos_lista2)
+
+    lista_diferente = []
+    funcion_listas_dif(lista1, lista2)
 ```
 
 #### Explicación de la solución
 
-*-Explicacion-*
+*Lo primero que se hace es pedir las 2 listas mediante ciclos For. Se crear una funcion para encontrar las lista con elementos que tiene la primera lista pero que no tiene la segunda, lo que se hace es crear una tercera lista donde se
+van a guardar todos estos elementos, y se recorre la primera lista viendo si el elemento en cada iteracion esta en la segunda lista, si no lo esta entonces es unico por lo que se pone en la lista diferenciadora, se sigue el procedimiento
+con todos los elementos de la lista 1*
 
 ### 9. Resolver el punto 7 del taller 1 usando operaciones con vectores.
 ### Taller 1 - Punto 7. Escriba un programa que pida 5 números reales y calcule las siguientes operaciones:
