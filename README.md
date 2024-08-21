@@ -35,8 +35,7 @@ except ValueError:
 
 #### Explicación de la solución
 
-*-Explicacion-*
-El programa solicita un número entero al usuario y determina cuántas cifras tiene. Luego, en un bucle while, extrae y muestra la cifra más significativa del número en cada iteración, eliminándola del número hasta que se hayan procesado todas las cifras. La variable y se usa para contar las cifras y i controla las iteraciones. Si el usuario ingresa un valor no válido, se muestra un mensaje de error.
+*El programa solicita un número entero al usuario y determina cuántas cifras tiene. Luego, en un bucle while, extrae y muestra la cifra más significativa del número en cada iteración, eliminándola del número hasta que se hayan procesado todas las cifras. La variable y se usa para contar las cifras y i controla las iteraciones. Si el usuario ingresa un valor no válido, se muestra un mensaje de error.*
 
 ### 2. Desarrollar un programa que ingrese un número flotante n y separe su parte entera de la parte decimal, y luego entregue los dígitos tanto de la parte entera como de la decimal.
 
@@ -75,7 +74,7 @@ if __name__ == "__main__":
 
 #### Explicación de la solución
 
-**Lo primero que se hace en la funcion es encontrar la parte entera con int() y la parte decimal, luego se convierte el numero a str para convertir todos los digitos del numero en elementos de una lista incluyendo el punto ("."), y luego se divide o
+*Lo primero que se hace en la funcion es encontrar la parte entera con int() y la parte decimal, luego se convierte el numero a str para convertir todos los digitos del numero en elementos de una lista incluyendo el punto ("."), y luego se divide o
 se hace slicing para separar los elementos antes del punto (la parte entera) y los elementos despues del punto que son la parte decimal*
 
 ### 3. Desarrollar un programa que permita ingresar dos números enteros y determinar si se tratan de números espejos, definiendo números espejos como dos números a y b tales que a se lee de izquierda a derecha igual que se lee b de derecha a izquierda, y viceversa.
@@ -103,8 +102,8 @@ except ValueError:
 
 #### Explicación de la solución
 
-*-Explicacion-*
-Este código solicita dos números enteros al usuario y los convierte en listas de sus cifras. Luego, invierte la primera lista y verifica si coincide con la segunda lista. Si las listas coinciden, se considera que los números son "números espejos" y se imprime un mensaje confirmándolo; de lo contrario, se indica que no lo son. Si el usuario ingresa un valor no válido, se muestra un mensaje de error.
+*Este código solicita dos números enteros al usuario y los convierte en listas de sus cifras. Luego, invierte la primera lista y verifica si coincide con la segunda lista. Si las listas coinciden, se considera que los números son "números espejos" y se imprime un mensaje confirmándolo; de lo contrario, se indica que no lo son. Si el usuario ingresa un valor no válido, se muestra un mensaje de error.*
+
 
 ### 4. Diseñar una función que permita calcular una aproximación de la función coseno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Taylor. **nota:** use *math* para traer la función coseno y mostrar la diferencia entre el valor real y la aproximación. Calcule con cuántos términos de la serie (i.e: cuáles valores de n), se tienen errores del 10%, 1%, 0.1% y 0.001%.
 $$cos(x) \approx cos(x,n) \approx \sum_{i=0}^{n} (-1)^i \frac{x^{2i}}{(2i)!}$$
@@ -185,8 +184,7 @@ if __name__ == "__main__":
 
 #### Explicación de la solución
 
-*-Explicacion-*
-Este código define una función recursiva mcd que calcula el máximo común divisor (MCD) de dos números enteros usando el algoritmo de Euclides. Si el segundo número (b) es 0, la función retorna el primer número (a) como el MCD; de lo contrario, la función se llama a sí misma con los valores b y a % b. Luego, solicita dos números al usuario, calcula su MCD utilizando la función, y muestra el resultado.
+*Este código define una función recursiva mcd que calcula el máximo común divisor (MCD) de dos números enteros usando el algoritmo de Euclides. Si el segundo número (b) es 0, la función retorna el primer número (a) como el MCD; de lo contrario, la función se llama a sí misma con los valores b y a % b. Luego, solicita dos números al usuario, calcula su MCD utilizando la función, y muestra el resultado.*
 
 ### 6. Desarrollar un programa que determine si en una lista existen o no elementos repetidos. Pista: Maneje valores booleanos y utilice el operador in.
 
@@ -258,8 +256,7 @@ except ValueError:
 ```
 
 #### Explicación de la solución
-*-Explicacion-*
-Cuenta cuántas vocales hay en una cadena dada. Luego, solicita al usuario la cantidad de elementos que desea en una lista y permite ingresar esos elementos. Posteriormente, filtra los elementos de la lista original para crear una nueva lista que contiene solo las cadenas con dos o más vocales. Si existen tales cadenas, las imprime; de lo contrario, informa que no hay ninguna. Si el usuario ingresa un valor no válido al definir la cantidad de elementos, se muestra un mensaje de error.
+*Cuenta cuántas vocales hay en una cadena dada. Luego, solicita al usuario la cantidad de elementos que desea en una lista y permite ingresar esos elementos. Posteriormente, filtra los elementos de la lista original para crear una nueva lista que contiene solo las cadenas con dos o más vocales. Si existen tales cadenas, las imprime; de lo contrario, informa que no hay ninguna. Si el usuario ingresa un valor no válido al definir la cantidad de elementos, se muestra un mensaje de error.*
 
 ### 8. Desarrollar un programa que dadas dos listas determine que elementos tiene la primer lista que no tenga la segunda lista. Ejemplo:
 <center>
@@ -282,7 +279,7 @@ salida: [1, True]
 #8. Desarrollar un programa que dadas dos listas determine que elementos tiene la primer lista que no tenga la segunda lista.
 
 def funcion_listas_dif(lista1, lista2):
-    for i in lista1:
+    for i in lista1: #se recorre la lista 1 y en cada iteracion se agrega a lista_diferente los numeros que no estan en la lista 2
         if i not in lista2:
             lista_diferente.append(i)
     print("La lista 1 es:", lista1)
@@ -291,7 +288,8 @@ def funcion_listas_dif(lista1, lista2):
 
 
 if __name__ == "__main__":
-    n_lista1 = int(input("Escriba la cantidad de elementos que tiene la lista 1: "))
+    #se pide la cantidad de elementos de la lista 1, y se agregan los elementos, lo mismo ocurre mas adelante con la lista 2
+    n_lista1 = int(input("Escriba la cantidad de elementos que tiene la lista 1: ")) 
     lista1 = []
     for i in range(1, n_lista1+1):
         elementos_lista1 = input("Escriba cada uno de los elementos de la lista 1: ")
@@ -385,8 +383,7 @@ print(f"La raiz cubica del numero menor es: {y}")
 
 #### Explicación de la solución
 
-*-Explicacion-*
-Este código solicita cinco números al usuario y los almacena en una lista. Luego realiza varias operaciones: calcula y muestra el promedio aritmético, ordena la lista para obtener la mediana, calcula el promedio multiplicativo usando la raíz quinta del producto de los números, y muestra la lista ordenada en forma ascendente y descendente. Además, calcula la potencia del número más grande elevado al más pequeño, y finalmente, utiliza el método de Newton-Raphson para encontrar la raíz cúbica del número más pequeño en la lista ordenada.
+*Este código solicita cinco números al usuario y los almacena en una lista. Luego realiza varias operaciones: calcula y muestra el promedio aritmético, ordena la lista para obtener la mediana, calcula el promedio multiplicativo usando la raíz quinta del producto de los números, y muestra la lista ordenada en forma ascendente y descendente. Además, calcula la potencia del número más grande elevado al más pequeño, y finalmente, utiliza el método de Newton-Raphson para encontrar la raíz cúbica del número más pequeño en la lista ordenada.*
 
 ### 10. Suponga que se tiene una lista A con ciertos números enteros. Desarrolle una función que, independientemente de los números que se encuentran en la lista A, tome aquellos números que son múltiplos de 3 y los guarde en una lista nueva, la cual debe ser retornada por la función. Implemente la perspectiva de un patrón de acumulación y también de comprensión de listas. Desafío: Si ya lo logró, inténtelo ahora sin utilizar el módulo (%). Pista: Un número es multiplo de 3 si la suma de sus dígitos también lo es, ¿verdad?
 
