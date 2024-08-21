@@ -15,7 +15,7 @@
 try: 
     num = int(input("Por favor ingrese un número entero: "))#Se le pide un numero al usuario 
     y:int= 0
-    cifras = len(str(num))#Se usa len para ver cuantas cifras tiene el numero.
+    cifras = len(str(num))#Se usa el metodo len para ver cuantas cifras tiene el numero.
     y += cifras
     i = 0
     anterior_cifra = 1
