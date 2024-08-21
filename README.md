@@ -36,6 +36,7 @@ except ValueError:
 #### Explicación de la solución
 
 *-Explicacion-*
+El programa solicita un número entero al usuario y determina cuántas cifras tiene. Luego, en un bucle while, extrae y muestra la cifra más significativa del número en cada iteración, eliminándola del número hasta que se hayan procesado todas las cifras. La variable y se usa para contar las cifras y i controla las iteraciones. Si el usuario ingresa un valor no válido, se muestra un mensaje de error.
 
 ### 2. Desarrollar un programa que ingrese un número flotante n y separe su parte entera de la parte decimal, y luego entregue los dígitos tanto de la parte entera como de la decimal.
 
