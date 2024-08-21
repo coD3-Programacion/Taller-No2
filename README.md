@@ -163,6 +163,11 @@ datos de valor aproximado y el real, para que con un ciclo while e incrementando
 ### 5. Desarrollar un programa que permita determinar el Minimo Comun Multiplo de dos numeros enteros. Abordar el problema desde una perpectiva tanto iterativa como recursiva. Pista: Puede ser de utilidad chequear el Algoritmo de Euclides para el cálculo del Máximo Común Divisor, y revisar cómo se relaciona este último con el Mínimo Común Múltiplo.
 
 ```python
+"""
+5.Desarrollar un programa que permita determinar el Minimo Comun Multiplo de dos numeros enteros. Abordar el problema desde una perpectiva
+tanto iterativa como recursiva. Pista: Puede ser de utilidad chequear el Algoritmo de Euclides para el cálculo del Máximo Común Divisor,
+ y revisar cómo se relaciona este último con el Mínimo Común Múltiplo.
+"""
 def mcd(a: int, b: int) -> int:
     if b == 0: #Caso base: si b es 0, el mcd es a
         return a
@@ -214,6 +219,9 @@ se agrega, si si esta en la lista entonces el numero deja de ser no repetido y s
 ### 7. Desarrollar un programa que determine si en una lista se encuentra una cadena de caracteres con dos o más vocales. Si la cadena existe debe imprimirla y si no existe debe imprimir 'No existe'.
 
 ```python
+"""
+7.Desarrollar un programa que determine si en una lista se encuentra una cadena de caracteres con dos o más vocales. Si la cadena existe debe imprimirla y si no existe debe imprimir 'No existe'.
+"""
 def contar_vocales(cadena): #Se crea una funcion que identifica cuantas vocales tiene una cadena
     vocales = 'aeiouAEIOU'
     contador = 0
@@ -313,6 +321,9 @@ con todos los elementos de la lista 1*
   + La raíz cúbica del menor número
 
 ```python
+"""
+9. Resolver el punto 7 del taller 1 usando operaciones con vectores.
+"""
 #Resolver el punto 7 del taller 1 usando operaciones con vectores
 lista: list = []
 a = float(input("Por favor ingrese un numero: "))
