@@ -388,11 +388,103 @@ print(f"La raiz cubica del numero menor es: {y}")
 ### 10. Suponga que se tiene una lista A con ciertos números enteros. Desarrolle una función que, independientemente de los números que se encuentran en la lista A, tome aquellos números que son múltiplos de 3 y los guarde en una lista nueva, la cual debe ser retornada por la función. Implemente la perspectiva de un patrón de acumulación y también de comprensión de listas. Desafío: Si ya lo logró, inténtelo ahora sin utilizar el módulo (%). Pista: Un número es multiplo de 3 si la suma de sus dígitos también lo es, ¿verdad?
 
 ```python
+"""
+10. Suponga que se tiene una lista A con ciertos números enteros. Desarrolle una función que, independientemente de los números que se encuentran en la lista A, tome aquellos 
+números que son múltiplos de 3 y los guarde en una lista nueva, la cual debe ser retornada por la función. Implemente la perspectiva de un patrón de acumulación y también de 
+comprensión de listas. Desafío: Si ya lo logró, inténtelo ahora sin utilizar el módulo (%). Pista: Un número es multiplo de 3 si la suma de sus dígitos también lo es, ¿verdad?
+"""
+#Perspectiva de patron de acumulación
+
+def funcion_multiplos_acumulacion(lista):
+    lista_multiplos = [] #lista donde se van a guardar los multiplos
+    for i in lista: #por cada elemento en la lista si el modulo es 0, entonces se agrega a la lista
+        if i % 3 == 0:
+            lista_multiplos.append(i)
+        else:
+            continue
+
+    print ("Los multiplos de 3 de la lista son", lista_multiplos) #se imprime la lista
+
+if __name__ == "__main__":
+    #se crea la lista A que va a ser la lista que el usuario va a ingresar
+    lista_A = []
+    n_listaA = int(input("Escriba la cantidad de elementos que tiene la lista A: "))
+    for i in range(1, n_listaA+1):
+        elementos_listaA = int(input("Escriba cada uno de los elementos de la lista A: "))
+        lista_A.append(elementos_listaA)
+    print("La lista dada es: ", lista_A)
+    funcion_multiplos_acumulacion(lista_A) #se llama a la funcion
 ```
 
 #### Explicación de la solución
 
-*-Explicacion-*
+*Desde la perspectiva de patron de acumulacion es la mas sencilla, ya que solo se crea una funcion con un ciclo For en el que si el modulo del elemento es 0 entonces se agrega a la lista de multiplos, luego se retorna y se imprime la lista*
+
+```python
+"""
+10. Suponga que se tiene una lista A con ciertos números enteros. Desarrolle una función que, independientemente de los números que se encuentran en la lista A, tome aquellos 
+números que son múltiplos de 3 y los guarde en una lista nueva, la cual debe ser retornada por la función. Implemente la perspectiva de un patrón de acumulación y también de 
+comprensión de listas. Desafío: Si ya lo logró, inténtelo ahora sin utilizar el módulo (%). Pista: Un número es multiplo de 3 si la suma de sus dígitos también lo es, ¿verdad?
+"""
+#Perspectiva de compresion de listas
+
+def funcion_multiplos_comprension(lista):
+    lista_multiplos = [i for i in lista if i%3==0] #list comprehension
+    print ("Los multiplos de 3 de la lista son", lista_multiplos)
+
+if __name__ == "__main__":
+    #se crea la lista A que va a ser la lista que el usuario va a ingresar
+    lista_A = []
+    n_listaA = int(input("Escriba la cantidad de elementos que tiene la lista A: "))
+    for i in range(1, n_listaA+1):
+        elementos_listaA = int(input("Escriba cada uno de los elementos de la lista A: "))
+        lista_A.append(elementos_listaA)
+    print("La lista dada es: ", lista_A)
+    funcion_multiplos_comprension(lista_A) #se llama a la funcion
+```
+
+#### Explicación de la solución
+
+*Para la perspectiva de comprension de listas lo que se hace es lo mismo a diferencia que esta vez es con una lista "especial" que se define en una linea de codigo, y se pasa el mismo ciclo for y el condicional if solo que en list comprehension*
+
+```python
+"""
+10. Suponga que se tiene una lista A con ciertos números enteros. Desarrolle una función que, independientemente de los números que se encuentran en la lista A, tome aquellos 
+números que son múltiplos de 3 y los guarde en una lista nueva, la cual debe ser retornada por la función. Implemente la perspectiva de un patrón de acumulación y también de 
+comprensión de listas. Desafío: Si ya lo logró, inténtelo ahora sin utilizar el módulo (%). Pista: Un número es multiplo de 3 si la suma de sus dígitos también lo es, ¿verdad?
+"""
+#sin % (modulo)
+
+def funcion_multiplos(lista):
+    suma_digitos = 0 #se van a sumar los digitos, por lo que se crea una variable = 0
+    lista_multiplos = [] #lista donde se guardan los multiplos
+    for i in lista: #por cada elemento en la lista se hace lo mismo:
+        for j in str(i): #se convierte en str y se recorre cada digito sumandolo a la variable suma_digitos
+            suma_digitos += int(j) 
+            while suma_digitos > 10: #si la suma es mayor a 10, entonces se repite el proceso hasta que no lo sea
+                for p in str(suma_digitos):
+                    suma_digitos += int(p)
+        if suma_digitos == 3 or suma_digitos == 6 or suma_digitos == 9: #si la variable es igual a 3, 6 o 9 (menores a 10) entonces se agrega a la lista_multiplos
+            lista_multiplos.append(i) #
+        suma_digitos = 0 #se vuelve cero de nuevo para repetir el proceso con cada elemento de la lista
+    print("los multiplos de 3 de la lista A son: ", lista_multiplos)
+
+if __name__ == "__main__":
+    #se crea la lista A que va a ser la lista que el usuario va a ingresar
+    lista_A = []
+    n_listaA = int(input("Escriba la cantidad de elementos que tiene la lista A: "))
+    for i in range(1, n_listaA+1):
+        elementos_listaA = int(input("Escriba cada uno de los elementos de la lista A: "))
+        lista_A.append(elementos_listaA)
+    print("La lista dada es: ", lista_A)
+    funcion_multiplos(lista_A) #se llama a la funcion
+```
+
+#### Explicación de la solución
+
+*En este caso se realizo sin el modulo(%), lo que se hizo es crear una variable suma_digitos donde se van a sumar todos los digitos de cada elemento de la lista, para esto se recorre la lista A y en cada iteracion se separan los digitos transformando
+el numero en str y recorriendolo con otro ciclo For esta vez sumando los digitos (para sumarlos se vuelve a transformar en entero), y con un ciclo While se hace exactamente lo mismo mientras la suma de los digitos sea mayor a 10, al final la suma de los 
+digitos tiene que ser 3 o 6 o 9 para que el numero sea multiplo de 3, y si es asi, se agrega a la lista de multiplos, se repite el mismo proceso con cada elemento de la lista*
 
 ## Bono
 
