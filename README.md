@@ -104,6 +104,7 @@ except ValueError:
 #### Explicación de la solución
 
 *-Explicacion-*
+Este código solicita dos números enteros al usuario y los convierte en listas de sus cifras. Luego, invierte la primera lista y verifica si coincide con la segunda lista. Si las listas coinciden, se considera que los números son "números espejos" y se imprime un mensaje confirmándolo; de lo contrario, se indica que no lo son. Si el usuario ingresa un valor no válido, se muestra un mensaje de error.
 
 ### 4. Diseñar una función que permita calcular una aproximación de la función coseno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Taylor. **nota:** use *math* para traer la función coseno y mostrar la diferencia entre el valor real y la aproximación. Calcule con cuántos términos de la serie (i.e: cuáles valores de n), se tienen errores del 10%, 1%, 0.1% y 0.001%.
 $$cos(x) \approx cos(x,n) \approx \sum_{i=0}^{n} (-1)^i \frac{x^{2i}}{(2i)!}$$
@@ -185,6 +186,7 @@ if __name__ == "__main__":
 #### Explicación de la solución
 
 *-Explicacion-*
+Este código define una función recursiva mcd que calcula el máximo común divisor (MCD) de dos números enteros usando el algoritmo de Euclides. Si el segundo número (b) es 0, la función retorna el primer número (a) como el MCD; de lo contrario, la función se llama a sí misma con los valores b y a % b. Luego, solicita dos números al usuario, calcula su MCD utilizando la función, y muestra el resultado.
 
 ### 6. Desarrollar un programa que determine si en una lista existen o no elementos repetidos. Pista: Maneje valores booleanos y utilice el operador in.
 
@@ -256,8 +258,8 @@ except ValueError:
 ```
 
 #### Explicación de la solución
-
 *-Explicacion-*
+Cuenta cuántas vocales hay en una cadena dada. Luego, solicita al usuario la cantidad de elementos que desea en una lista y permite ingresar esos elementos. Posteriormente, filtra los elementos de la lista original para crear una nueva lista que contiene solo las cadenas con dos o más vocales. Si existen tales cadenas, las imprime; de lo contrario, informa que no hay ninguna. Si el usuario ingresa un valor no válido al definir la cantidad de elementos, se muestra un mensaje de error.
 
 ### 8. Desarrollar un programa que dadas dos listas determine que elementos tiene la primer lista que no tenga la segunda lista. Ejemplo:
 <center>
@@ -384,6 +386,7 @@ print(f"La raiz cubica del numero menor es: {y}")
 #### Explicación de la solución
 
 *-Explicacion-*
+Este código solicita cinco números al usuario y los almacena en una lista. Luego realiza varias operaciones: calcula y muestra el promedio aritmético, ordena la lista para obtener la mediana, calcula el promedio multiplicativo usando la raíz quinta del producto de los números, y muestra la lista ordenada en forma ascendente y descendente. Además, calcula la potencia del número más grande elevado al más pequeño, y finalmente, utiliza el método de Newton-Raphson para encontrar la raíz cúbica del número más pequeño en la lista ordenada.
 
 ### 10. Suponga que se tiene una lista A con ciertos números enteros. Desarrolle una función que, independientemente de los números que se encuentran en la lista A, tome aquellos números que son múltiplos de 3 y los guarde en una lista nueva, la cual debe ser retornada por la función. Implemente la perspectiva de un patrón de acumulación y también de comprensión de listas. Desafío: Si ya lo logró, inténtelo ahora sin utilizar el módulo (%). Pista: Un número es multiplo de 3 si la suma de sus dígitos también lo es, ¿verdad?
 
