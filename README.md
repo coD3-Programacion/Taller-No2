@@ -80,6 +80,11 @@ se hace slicing para separar los elementos antes del punto (la parte entera) y l
 ### 3. Desarrollar un programa que permita ingresar dos números enteros y determinar si se tratan de números espejos, definiendo números espejos como dos números a y b tales que a se lee de izquierda a derecha igual que se lee b de derecha a izquierda, y viceversa.
 
 ```python
+"""
+3.Desarrollar un programa que permita ingresar dos números enteros y determinar si se tratan de números espejos,
+definiendo números espejos como dos números a y b tales que a se lee de izquierda a derecha igual
+que se lee b de derecha a izquierda, y viceversa.
+"""
 #Se usa try por si el usuario ingresa un valor que no es valido.
 try: 
     num_1 = int(input("Por favor ingrese un numero entero: "))#Se le piden dos numeros al usuario.
