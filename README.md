@@ -11,6 +11,9 @@
 ### 1. Desarrollar un programa que ingrese un número entero n y separe todos los digitos que componen el número. Pista: Utilice los operadores módulo (%) y división entera (//).
 
 ```python
+"""
+1. Desarrollar un programa que ingrese un número entero n y separe todos los digitos que componen el número. Pista: Utilice los operadores módulo (%) y división entera (//).
+"""
 # Se usa try por si el usuario pone un valor que no es valido.
 try: 
     num = int(input("Por favor ingrese un número entero: "))#Se le pide un numero al usuario 
